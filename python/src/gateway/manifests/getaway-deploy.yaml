@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getaway
+  labels:
+    app: getaway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: getaway
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+  template:
+    metadata:
+      labels:
+        app: getaway
+    spec:
+      containers:
+      - name: getaway
+        image: krlosaren/getaway:v2
+        envFrom:
+          - configMapRef:
+              name: getaway-configmap
+          - secretRef:
+              name: getaway-secret
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

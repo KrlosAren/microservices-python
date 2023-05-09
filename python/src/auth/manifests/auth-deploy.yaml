@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: krlosaren/auth:v1
+          image: krlosaren/auth-app:v1
           ports:
             - containerPort: 5000
           envFrom:

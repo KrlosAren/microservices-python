@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: getaway-configmap
+data:
+  AUTH_SERVICE_ADDRESS : "auth:5000"
+  
