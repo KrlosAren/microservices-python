@@ -1,8 +1,13 @@
-CREATE USER 'auth_user' @'%' IDENTIFIED BY 'Auth1234';
-DROP DATABASE if EXISTS auth;
+
+CREATE USER 'auth_user'@'localhost' IDENTIFIED BY 'Auth1234';
+
+DROP DATABASE IF EXISTS auth;
 CREATE DATABASE auth;
-GRANT ALL PRIVILEGES ON auth.* TO 'auth_user' @'%';
+
+GRANT ALL PRIVILEGES ON auth.* TO 'auth_user'@'localhost';
+
 USE auth;
+
 DROP TABLE IF EXISTS user;
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -10,5 +15,6 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
+
 INSERT INTO users (email, password)
 VALUES ("carlos@mail.com", "Admin1234");
