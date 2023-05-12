@@ -10,7 +10,7 @@ from storage import util
 
 ## server
 server = Flask(__name__)
-server.config["MONGO_URI"] = "mongodb://host.minikube.internal:27017/videos"
+server.config["MONGO_URI"] = f"mongodb://host.minikube.internal:28017/videos"
 
 mongo = PyMongo(server)
 

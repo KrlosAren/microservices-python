@@ -1,0 +1,19 @@
+version: "3.8"
+
+
+services:
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+
+    ports:
+      - "33060:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=auth
+  
+  mongodb:
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - "28017:27017"

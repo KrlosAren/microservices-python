@@ -1,4 +1,5 @@
 CREATE USER 'auth_user' @'%' IDENTIFIED BY 'Auth1234';
+DROP DATABASE if EXISTS auth;
 CREATE DATABASE auth;
 GRANT ALL PRIVILEGES ON auth.* TO 'auth_user' @'%';
 USE auth;

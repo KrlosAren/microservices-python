@@ -11,7 +11,7 @@ def main():
     
     logger.info("Starting server consumer")
     
-    client = MongoClient("host.minikube.internal",27017)
+    client = MongoClient("host.minikube.internal",28017)
     db_videos = client.videos
     db_mp3s = client.mp3s
     

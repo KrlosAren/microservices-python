@@ -4,4 +4,4 @@ metadata:
   name: getaway-configmap
 data:
   AUTH_SERVICE_ADDRESS : "auth:5000"
-  
+  MONGO_PORT : "28017"
