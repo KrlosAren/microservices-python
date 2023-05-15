@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: auth-configmap
 data:
-  MYSQL_HOST: 172.20.159.173
+  MYSQL_HOST: host.minikube.internal
   MYSQL_DB : auth
   MYSQL_USER: auth_user

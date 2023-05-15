@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: getaway
-        image: krlosaren/getaway:v2
+        image: krlosaren/getaway:v8
         envFrom:
           - configMapRef:
               name: getaway-configmap

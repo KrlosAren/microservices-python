@@ -8,8 +8,9 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=admin
     ports:
-      - "33060:3306"  
+      - "3307:3306"  
   mongodb:
-    image: mongodb/mongodb-community-server
+    image: mongo:4.0.4
     ports:
       - "28017:27017"
+    

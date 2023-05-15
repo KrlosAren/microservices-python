@@ -20,7 +20,8 @@ spec:
     spec:
       containers:
         - name: auth
-          image: krlosaren/auth-app:v3
+          image: krlosaren/auth-app:v8
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           envFrom:

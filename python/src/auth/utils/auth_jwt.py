@@ -9,7 +9,7 @@ def createJWT(username, secret, auth):
             "iat": datetime.datetime.utcnow(),
             "admin":auth
         },
-        secret=secret,
+        secret,
         algorithm='HS256'
     )
     
@@ -17,8 +17,9 @@ def decode_jwt(encode_jwt, secret):
     encode_jwt = encode_jwt.split(' ')[1]
     
     try:
-        decoded = jwt.decode(encode_jwt, secret,algorithm=['HS256'])
-    except:
+        decoded = jwt.decode(encode_jwt, secret,algorithms=['HS256'])
+    except Exception as error:
+        print(f'Error decoding jwt: %s' % error)
         return ("not authorized", 403)
     
     return (decoded, 200)
